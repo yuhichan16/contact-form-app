@@ -22,6 +22,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('index');
 Route::post('/contacts/confirm', [ContactController::class, 'confirm'])->name('contacts.confirm');
 //データ送信
 Route::post('/contacts/store', [ContactController::class, 'store'])->name('contacts.store');
+Route::post('/contacts', [ContactController::class, 'store']);
 //データ修正
 Route::post('/contacts/back', [ContactController::class, 'back'])->name('contact.back');
 //thanks完了
