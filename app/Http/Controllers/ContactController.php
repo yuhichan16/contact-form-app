@@ -12,15 +12,11 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $contacts = Contact::all();
+        $contacts = Contact::with(['category', 'tags'])->get();
         $categories = Category::all();
         $tags = Tag::all();
 
-        return view('contact.index', [
-            'contacts' => $contacts,
-            'categories' => $categories,
-            'tags' => $tags,
-        ]);
+        return view('contact.index', compact('contacts', 'categories', 'tags'));
     }
 
     public function confirm(StoreContactRequest $request)
