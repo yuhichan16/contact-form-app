@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Category;
-use App\Models\Tag;
 use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
